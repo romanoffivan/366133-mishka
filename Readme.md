@@ -1,7 +1,7 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Иван Романов](https://up.htmlacademy.ru/adaptive/12/user/366133).
-* Наставник: `Неизвестно`.
+* Наставник: `Антон Попов`.
 
 ---
 
