@@ -1,0 +1,64 @@
+.main-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    background-color: @black;
+    box-shadow: 0 6px 0 0 @black, 0 12px 0 0 @black;
+  }
+
+  &:hover::before,
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
+    opacity: 0.6;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: 0.3;
+  }
+}
+
+.main-nav__link {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 75px;
+  font-size: 17px;
+  line-height: 24px;
+  color: @black;
+  border-bottom: 1px solid @color-border;
+
+  &:first-of-type {
+    border-top: 1px solid @color-border;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

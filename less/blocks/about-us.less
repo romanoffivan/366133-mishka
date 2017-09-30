@@ -1,0 +1,66 @@
+.about-us {
+  margin-bottom: 30px;
+}
+
+.about-us__wrapper {
+  display: flex;
+  flex-direction: column;
+  .container();
+}
+
+.about-us__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 25px;
+  line-height: 30px;
+  color: @black;
+}
+
+.about-us__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-us__item {
+  position: relative;
+  height: 123px;
+  padding-top: 60px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: bold;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    width: 60px;
+    height: 40px;
+  }
+
+  &--1::before {
+    background: @white url("../img/icon-feature-flower.svg") no-repeat center;
+  }
+
+  &--2::before {
+    background: @white url("../img/icon-feature-money.svg") no-repeat 5px 2px;
+  }
+
+  &--3::before {
+    background: @white url("../img/icon-feature-heart.svg") no-repeat 12px 7px;
+  }
+
+  &--4::before {
+    background: @white url("../img/icon-feature-ball.svg") no-repeat 7px 5px;
+  }
+
+  &--5::before {
+    background: @white url("../img/icon-feature-rocket.svg") no-repeat 0 5px;
+  }
+
+  &--6::before {
+    background: @white url("../img/icon-feature-gift.svg") no-repeat 7px 5px;
+  }
+}
