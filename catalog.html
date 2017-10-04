@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML Academy: Мишка</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
       <a href="index.html" class="page-header__logo">
         <img class="page-header__logo-image" src="img/logo-mobile.svg" alt="Мишка">
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--nojs">
         <button class="main-nav__toggle" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
@@ -93,13 +94,19 @@
   <footer class="page-footer">
     <div class="page-footer__wrapper">
       <div class="social">
-        <a href="javascript:void(0);" class="social__link  social__link--instagram">Инстаграм</a>
-        <a href="javascript:void(0);" class="social__link  social__link--facebook">Фейсбук</a>
-        <a href="javascript:void(0);" class="social__link  social__link--twitter">Твитер</a>
+        <a href="javascript:void(0);" class="social__link  social__link--instagram">
+          <span class="visually-hidden">Инстаграм</span>
+        </a>
+        <a href="javascript:void(0);" class="social__link  social__link--facebook">
+          <span class="visually-hidden">Фейсбук</span>
+        </a>
+        <a href="javascript:void(0);" class="social__link  social__link--twitter">
+          <span class="visually-hidden">Твитер</span>
+        </a>
       </div>
       <div class="page-footer__copyright">Разработано
         <a class="page-footer__copyright-author-link" href="https://htmlacademy.ru/intensive/adaptive">
-          Логотип HTMLacademy
+          <span class="visually-hidden">Логотип HTMLacademy</span>
         </a>
       </div>
     </div>
@@ -120,5 +127,6 @@
       <button class="button  form__modal-button" type="submit">Добавить</button>
     </form>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
