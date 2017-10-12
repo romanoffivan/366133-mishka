@@ -17,14 +17,14 @@
 }
 
 .about-us__list {
-  margin: 0;
-  padding: 0;
+  margin-top: 20px;
+  padding-left: 0;
   list-style: none;
 }
 
 .about-us__item {
   position: relative;
-  height: 123px;
+  height: 125px;
   padding-top: 60px;
   font-size: 17px;
   line-height: 20px;
@@ -62,5 +62,58 @@
 
   &--6::before {
     background: @white url("../img/icon-feature-gift.svg") no-repeat 7px 5px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .about-us {
+    margin-bottom: 40px;
+  }
+
+  .about-us__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .container-tablet();
+  }
+
+  .about-us__title {
+    width: 100%;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .about-us__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 440px;
+  }
+
+  .about-us__item {
+    width: 50%;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .about-us {
+    margin-bottom: 47px;
+  }
+
+  .about-us__wrapper {
+    padding-left: 20px;
+  }
+
+  .about-us__title {
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .about-us__item {
+    padding-top: 55px;
+    width: 350px;
   }
 }

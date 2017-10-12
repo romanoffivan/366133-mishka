@@ -17,6 +17,7 @@
 }
 
 .features__subtitle {
+  margin-right: 20px;
   margin-top: 5px;
   font-size: 17px;
   line-height: 20px;
@@ -25,13 +26,15 @@
 }
 
 .features__desc {
-  margin-top: 5px;
+  margin-top: 35px;
+  line-height: 30px;
 }
 
 .features__property {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 27px;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 .features__value {
@@ -50,14 +53,115 @@
 }
 
 .features__price {
-  margin: 25px 0;
-  font-size: 17px;
+  margin: 30px 0;
+  font-size: 20px;
   line-height: 24px;
   font-weight: bold;
   text-align: center;
 }
 
 .features__button {
-  width: 100%;
+  width: 260px;
 }
 
+@media (min-width: @tablet-width) {
+  .features {
+    margin-bottom: 120px;
+  }
+
+  .features__wrapper {
+    position: relative;
+    flex-wrap: wrap;
+    .container-tablet();
+  }
+
+  .features__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .features__title {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .features__subtitle {
+    width: 90px;
+    margin-top: 40px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .features__desc {
+    font-size: 17px;
+    width: 285px;
+  }
+
+  .features__property {
+    width: 290px;
+    line-height: 20px;
+  }
+
+  .features__image {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  }
+
+  .features__price {
+    width: 290px;
+    text-align: center;
+  }
+
+  .features__button {
+    width: 290px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .features {
+    margin-bottom: 155px;
+  }
+
+  .features__wrapper {
+    .container-desktop();
+  }
+
+  .features__title-wrapper {
+    justify-content: flex-start;
+    width: 750px;
+    padding-top: 50px;
+    margin-bottom: 5px;
+  }
+
+  .features__title {
+    padding-left: 20px;
+    font-size: 53px;
+    line-height: 57px;
+    z-index: 5;
+    order: 2;
+  }
+
+  .features__subtitle {
+    margin-top: 45px;
+    padding-left: 40px;
+  }
+
+  .features__desc {
+    margin-bottom: 25px;
+    padding-left: 175px;
+  }
+
+  .features__property {
+    margin-bottom: 90px;
+    margin-left: 175px;
+  }
+
+  .features__price {
+    padding-left: 175px;
+  }
+
+  .features__button {
+    margin-left: 175px;
+  }
+}

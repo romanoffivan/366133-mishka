@@ -8,38 +8,51 @@
 </head>
 <body>
   <header class="page-header">
-    <div class="page-header__wrapper">
-      <a class="page-header__logo">
-        <img class="page-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Мишка">
-      </a>
-      <nav class="main-nav main-nav--nojs">
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
+    <nav class="main-nav main-nav--nojs">
+      <button class="main-nav__toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <div class="logo">
+        <a class="logo__link">
+          <img class="logo__image" src="img/logo-mobile.svg" width="86" height="35" alt="Мишка">
+        </a>
+      </div>
+      <div class="main-nav__links">
         <a class="main-nav__link" href="catalog.html">Каталог товаров</a>
         <a class="main-nav__link" href="form.html">Вязание на заказ</a>
-        <a class="main-nav__link main-nav__link--search" href="javascript:void(0);">Поиск по сайту</a>
-        <a class="main-nav__link main-nav__link--basket" href="javascript:void(0);">Корзина: пока пуста</a>
-      </nav>
-      <section class="page-header__promo">
-        <h1 class="page-header__title">Милые штуки ручной работы&nbsp;для&nbsp;дома</h1>
-        <div class="page-header__goods">
-          <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--interior">
-            <span>Предметы интерьера</span>
-          </a>
-          <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--toys">
-            <span>Детские игрушки</span>
-          </a>
-        </div>
-      </section>
-    </div>
+        <a class="main-nav__link main-nav__link--sub-link" href="javascript:void(0);">Новые поступления</a>
+        <a class="main-nav__link main-nav__link--sub-link" href="javascript:void(0);">Распродажа</a>
+      </div>
+      <div class="main-nav__user-block">
+        <a class="main-nav__link main-nav__link--search" href="javascript:void(0);">
+          <span>Поиск по сайту</span>
+        </a>
+        <a class="main-nav__link main-nav__link--basket" href="javascript:void(0);">
+          Корзина: пока пуста
+        </a>
+        <p class="main-nav__desc">Бесплатная доставка по России</p>
+      </div>
+    </nav>
+    <section class="page-header__promo">
+      <h1 class="page-header__title">Милые штуки ручной работы&nbsp;для&nbsp;дома</h1>
+      <div class="page-header__goods">
+        <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--interior">
+          <span>Предметы интерьера</span>
+        </a>
+        <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--toys">
+          <span>Детские игрушки</span>
+        </a>
+      </div>
+    </section>
   </header>
   <main class="page-main">
     <section class="features">
       <div class="features__wrapper">
-        <h2 class="features__title">Вязаные корзинки</h2>
-        <h3 class="features__subtitle">Товар недели</h3>
-        <p class="features__desc">Экологически чистая пряжа, ручная работа. Доступны в&nbsp;шести расцветках, и&nbsp;трех размерах.</p>
+        <div class="features__title-wrapper">
+          <h2 class="features__title">Вязаные корзинки</h2>
+          <h3 class="features__subtitle">Товар недели</h3>
+        </div>
+        <p class="features__desc">Экологически чистая пряжа, ручная&nbsp;работа. Доступны в&nbsp;шести расцветках, и&nbsp;трех размерах.</p>
         <table class="features__property">
           <tr class="features__value">
             <th>Цвет</th>
@@ -66,7 +79,7 @@
           <li class="about-us__item about-us__item--1">Экологически чистые&nbsp;материалы</li>
           <li class="about-us__item about-us__item--2">Скандинавский стиль по&nbsp;российской цене</li>
           <li class="about-us__item about-us__item--3">Увеличивает лайки на&nbsp;фотографиях</li>
-          <li class="about-us__item about-us__item--4">Связано вручную с любовью&nbsp;и умилением</li>
+          <li class="about-us__item about-us__item--4">Связано вручную с любовью&nbsp;и&nbsp;умилением</li>
           <li class="about-us__item about-us__item--5">Поддержка отечественного производителя</li>
           <li class="about-us__item about-us__item--6">Поставляется в подарочной&nbsp;упаковке</li>
         </ul>
