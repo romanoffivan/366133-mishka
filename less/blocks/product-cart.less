@@ -18,7 +18,7 @@
 .product-card__desc {
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0 28px;
 }
 
 .product-card__title {
@@ -37,8 +37,10 @@
 }
 
 .product-card__price {
-  position: relative;
-  padding: 23px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
   padding-bottom: 28px;
 }
 
@@ -48,15 +50,17 @@
   font-weight: bold;
 }
 
-.product-card__basket {
-  position: absolute;
-  display: block;
-  top: 25px;
-  right: 25px;
-  width: 22px;
-  height: 22px;
-  background: url("../img/icon-cart.svg") no-repeat;
-  opacity: 0.2;
+.product-card__icon {
+  fill: fade(@color-text, 20%);
+}
+
+.product-card__basket:hover .product-card__icon,
+.product-card__basket:focus .product-card__icon {
+  fill: @aqua-light;
+}
+
+.product-card__basket:active .product-card__icon {
+  fill: fade(@aqua-light, 30%);
 }
 
 @media (min-width: @tablet-width) {
@@ -90,7 +94,7 @@
 
   .product-card__price {
     width: 270px;
-    margin-top: -83px;
+    margin-top: -80px;
     margin-left: auto;
     margin-right: 30px;
     padding-left: 0;
@@ -107,7 +111,7 @@
 @media (min-width: @desktop-width) {
   .product-card {
     flex-direction: column;
-    width: 316px;
+    width: 314px;
     margin: 0;
     margin-right: 45px;
     margin-bottom: 55px;
@@ -133,8 +137,6 @@
 
   .product-card__price-text {
     margin-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 28px;
   }
 
   .product-card__basket {

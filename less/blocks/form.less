@@ -23,8 +23,6 @@
 
 .form__title {
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 25px;
   font-size: 17px;
   line-height: 16px;
   font-weight: bold;
@@ -35,7 +33,6 @@
     content: "";
     align-self: center;
     height: 1px;
-    width: 70%;
     background-color: @aqua-light;
     flex-grow: 2;
     margin-left: 20px;
@@ -43,17 +40,14 @@
 }
 
 .form__label-title {
+  position: relative;
   display: block;
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 17px;
   line-height: 24px;
   font-weight: bold;
   color: @aqua-light;
   text-transform: uppercase;
-
-  &--textarea {
-    margin-bottom: 20px;
-  }
 
   &::after {
     content: "";
@@ -63,6 +57,16 @@
     background-color: @aqua-light;
     flex-grow: 2;
     margin-left: 20px;
+  }
+
+  &:nth-child(2) {
+    margin-top: 5px;
+  }
+
+  &--textarea {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
 }
 
@@ -170,6 +174,12 @@
   &:focus {
     border-color: @aqua-light;
   }
+
+  &--text {
+    height: 60px;
+    padding-top: 15px;
+    margin-bottom: 0;
+  }
 }
 
 .form__textarea {
@@ -209,11 +219,18 @@
   background: transparent;
 }
 
+.form__icon {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  fill: fade(@color-text, 20%);
+}
+
 @media (min-width: @tablet-width) {
   .form__fieldset {
     h2 {
       width: auto;
-      padding: 17px 0;
+      padding: 10px 0;
     }
 
     &--gray {
@@ -230,14 +247,13 @@
 
     &--contacts {
       flex-direction: column;
-      padding-top: 45px;
-      padding-bottom: 30px;
+      padding-top: 25px;
+      padding-bottom: 55px;
     }
   }
 
   .form__title {
     width: 167px;
-    margin-top: 12px;
 
     &::after {
       display: none;
@@ -250,7 +266,12 @@
     &--checkbox {
       display: flex;
       flex-flow: row wrap;
-      margin-top: -13px;
+      margin-top: -10px;
+      padding-bottom: 5px
+    }
+
+    &--name {
+      margin-top: -12px;
     }
   }
 
@@ -295,7 +316,7 @@
     height: 21px;
   }
 
-  .form__input--checkbox:checked + label::before {
+  .form__input-checkbox:checked + label::before {
     background-size: auto;
   }
 
@@ -308,9 +329,8 @@
 
   .form__label-title {
     display: flex;
+    align-items: baseline;
     width: 100%;
-    margin-top: 0px;
-    margin-bottom: 20px;
 
     &--textarea {
       align-items: flex-start;
@@ -320,26 +340,38 @@
     &::after {
       display: none;
     }
+
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
   }
 
   .form__input {
+    font: inherit;
     padding-left: 20px;
     margin-bottom: 0;
     margin-left: 25px;
+    padding-top: 10px;
     font-size: 19px;
+    font-weight: 400;
 
     &--text {
       width: 500px;
       margin-top: 6px;
       margin-left: 0;
     }
+
+    &::placeholder {
+      font-size: 19px;
+    }
   }
 
   .form__textarea {
     width: 500px;
     margin-left: 170px;
-    margin-top: -55px;
+    margin-top: -65px;
     margin-bottom: 27px;
+    font-size: 19px;
 
     &::placeholder {
       font-size: 19px;
@@ -352,7 +384,6 @@
     flex-flow: row wrap;
     justify-content: space-between;
     padding-top: 5px;
-    padding-bottom: 40px;
   }
 
   .form__field-mark {
@@ -363,7 +394,13 @@
   .form__button {
     order: -1;
     width: 230px;
+    height: 50px;
     margin-bottom: 0;
+  }
+
+  .form__icon {
+    top: 25px;
+    right: 25px;
   }
 }
 
@@ -372,6 +409,11 @@
     .container-desktop();
     padding-top: 60px;
     padding-bottom: 20px;
+
+    &--contacts {
+      margin-top: -25px;
+      padding-bottom: 50px;
+    }
   }
 
   .form__title {
@@ -386,6 +428,10 @@
     &--checkbox {
       width: 800px;
       margin-top: -13px;
+    }
+
+    &--name {
+      margin-top: -8px;
     }
   }
 
@@ -415,7 +461,7 @@
 
   .form__textarea {
     width: 700px;
-    margin-top: 0;
+    margin-top: -10px;
     margin-left: 75px;
   }
 
@@ -425,5 +471,10 @@
 
   .form__button {
     margin-left: -15px;
+  }
+
+  .form__icon {
+    top: 15px;
+    right: 5px;
   }
 }

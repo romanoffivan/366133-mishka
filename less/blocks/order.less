@@ -1,3 +1,7 @@
+.order {
+  margin-bottom: 52px;
+}
+
 .order__description {
   .container();
   margin-top: 20px;
@@ -7,11 +11,15 @@
 }
 
 @media (min-width: @tablet-width) {
+  .order {
+    margin-bottom: 40px;
+  }
+
   .order__description {
-  	.container-tablet();
-  	margin-top: 65px;
-  	font-size: 17px;
-  	line-height: 30px;
+    .container-tablet();
+    margin-top: 62px;
+    font-size: 17px;
+    line-height: 30px;
   }
 }
 
@@ -19,6 +27,6 @@
   .order__description {
     .container-desktop();
     width: 700px;
-    margin-top: 132px;
+    margin-top: 115px;
   }
 }

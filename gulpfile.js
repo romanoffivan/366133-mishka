@@ -6,16 +6,32 @@ var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
+var rename = require("gulp-rename");
+var webp = require("gulp-webp");
+var svgstore = require("gulp-svgstore");
 
 gulp.task("style", function() {
   gulp.src("less/style.less")
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(postcss([
-      autoprefixer()
+  .pipe(plumber())
+  .pipe(less())
+  .pipe(postcss([
+    autoprefixer()
     ]))
-    .pipe(gulp.dest("css"))
-    .pipe(server.stream());
+  .pipe(gulp.dest("css"))
+  .pipe(server.stream());
+});
+
+gulp.task("sprite", function() {
+  return gulp.src("img/icon-*.svg")
+  .pipe(svgstore({ inlineSvg: true }))
+  .pipe(rename("sprite.svg"))
+  .pipe(gulp.dest("img"));
+});
+
+gulp.task("webp", function() {
+  return gulp.src("img/*.jpg")
+  .pipe(webp())
+  .pipe(gulp.dest("img/webp"));
 });
 
 gulp.task("serve", ["style"], function() {
