@@ -5,6 +5,10 @@
   <title>HTML Academy: Мишка</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    document.createElement("picture");
+  </script>
+  <script src="js/picturefill.js" async></script>
 </head>
 <body>
   <svg style="display:none">
@@ -193,12 +197,12 @@
     <article class="modal">
       <h2 class="modal__title">Добавить в корзину</h2>
       <p class="modal__text">Выберите размер:</p>
-      <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">      
-        <input class="visually-hidden modal__checkbox" type="checkbox" id="s-size" name="s-size">
+      <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
+        <input class="visually-hidden modal__radio" type="radio" id="s-size" name="check-size" value="s-size" checked>
         <label class="modal__label" for="s-size">S</label>
-        <input class="visually-hidden modal__checkbox" type="checkbox" id="m-size" name="m-size">
+        <input class="visually-hidden modal__radio" type="radio" id="m-size" name="check-size" value="m-size">
         <label class="modal__label" for="m-size">M</label>
-        <input class="visually-hidden modal__checkbox" type="checkbox" id="l-size" name="l-size">
+        <input class="visually-hidden modal__radio" type="radio" id="l-size" name="check-size" value="l-size">
         <label class="modal__label" for="l-size">L</label>
         <button class="button  modal__button" type="submit">Добавить</button>
       </form>

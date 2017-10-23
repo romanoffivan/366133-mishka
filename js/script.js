@@ -19,7 +19,7 @@ navToggle.addEventListener("click", function(event) {
 
 if(modal) {
   for(var i = 0; i < buyBtns.length; i++) {
-    buyBtns[i].addEventListener('click', function(event){
+    buyBtns[i].addEventListener("click", function(event){
       event.preventDefault();
       overlay.classList.add("overlay--show");
       modal.classList.add("modal--show");

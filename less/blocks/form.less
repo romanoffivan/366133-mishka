@@ -139,6 +139,11 @@
   border-color: fade(@color-text, 30%);
 }
 
+.form__input-radio:focus + label::before,
+.form__input-checkbox:focus + label::before {
+  border-color: @aqua-light;
+}
+
 .form__input-checkbox:checked + label::before {
   background: transparent url("../img/icon-tick.svg") no-repeat center;
   background-size: 25px;
