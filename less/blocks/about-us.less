@@ -27,6 +27,8 @@
 
 .about-us__item {
   position: relative;
+  min-height: 123px;
+  margin-bottom: 0;
   padding: 60px 0 20px;
   font-size: 17px;
   line-height: 20px;
@@ -70,8 +72,8 @@
 @media (min-width: @tablet-width) {
   .about-us {
     .container-tablet();
-    width: 768px;
-    margin-bottom: 28px;
+    width: 668px;
+    margin-bottom: 20px;
   }
 
   .about-us__wrapper {
@@ -95,8 +97,8 @@
 
   .about-us__item {
     width: 50%;
-    padding: 65px 20px 20px 0;
-    margin-bottom: 28px;
+    padding: 60px 20px 20px 0;
+    margin-bottom: 30px;
     font-size: 20px;
     line-height: 22px;
 
@@ -128,6 +130,7 @@
 
 @media (min-width: @desktop-width) {
   .about-us {
+    .container-desktop();
     margin-bottom: 20px;
   }
 
