@@ -5,8 +5,15 @@
   <title>HTML Academy: Мишка</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    document.createElement("picture");
+  </script>
+  <script src="js/picturefill.js" async></script>
 </head>
 <body>
+  <div style="display:none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
   <header class="page-header">
     <nav class="main-nav main-nav--nojs">
       <button class="main-nav__toggle" type="button">
@@ -14,7 +21,11 @@
       </button>
       <div class="logo">
         <a class="logo__link">
-          <img class="logo__image" src="img/logo-mobile.svg" width="86" height="35" alt="Мишка">
+          <picture class="logo__image">
+            <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img src="img/logo-mobile.svg" alt="Mishka">
+          </picture>
         </a>
       </div>
       <div class="main-nav__links">
@@ -25,9 +36,15 @@
       </div>
       <div class="main-nav__user-block">
         <a class="main-nav__link main-nav__link--search" href="javascript:void(0);">
+          <svg class="main-nav__icon" width="18" height="18">
+            <use xlink:href="#icon-search"></use>
+          </svg>
           <span>Поиск по сайту</span>
         </a>
         <a class="main-nav__link main-nav__link--basket" href="javascript:void(0);">
+          <svg class="main-nav__icon" width="20" height="19">
+            <use xlink:href="#icon-cart"></use>
+          </svg>
           Корзина: пока пуста
         </a>
         <p class="main-nav__desc">Бесплатная доставка по России</p>
@@ -36,16 +53,16 @@
     <section class="page-header__promo">
       <h1 class="page-header__title">Милые штуки ручной работы&nbsp;для&nbsp;дома</h1>
       <div class="page-header__goods">
-        <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--interior">
+        <a href="/catalog/interior" class="page-header__goods-link page-header__goods-link--interior">
           <span>Предметы интерьера</span>
         </a>
-        <a href="javascript:void(0);" class="page-header__goods-link page-header__goods-link--toys">
+        <a href="/catalog/toys" class="page-header__goods-link page-header__goods-link--toys">
           <span>Детские игрушки</span>
         </a>
       </div>
     </section>
   </header>
-  <main class="page-main">
+  <main>
     <section class="features">
       <div class="features__wrapper">
         <div class="features__title-wrapper">
@@ -67,9 +84,16 @@
             <td>15см</td>
           </tr>
         </table>
-        <img class="features__image" src="img/triple-set-mobile@1x.jpg" width="260" height="315" alt="Вязанные корзинки">
+        <picture class="features__image">
+          <source type="image/webp" media="(min-width: 1150px)" srcset="img/webp/triple-set-desktop@1x.webp 1x, img/webp/triple-set-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/triple-set-tablet@1x.webp 1x, img/webp/triple-set-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/webp/triple-set-mobile@1x.webp 1x, img/webp/triple-set-mobile@2x.webp 2x">
+          <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+          <img src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="Вязаные корзинки">
+        </picture>
         <span class="features__price">Цена: 990 руб.</span>
-        <a href="javascript:void(0);" class="features__button button">Заказать</a>
+        <a href="/cart" class="features__button button buy-button">Заказать</a>
       </div>
     </section>
     <section class="about-us">
@@ -98,7 +122,7 @@
           <button class="reviews__control reviews__control--prev" type="button">Предыдущий отзыв</button>
           <button class="reviews__control reviews__control--next" type="button">Следующий отзыв</button>
         </div>
-        <a href="javascript:void(0);" class="reviews__button button">Написать</a>
+        <a href="feedback.html" class="reviews__button button">Написать</a>
       </div>
     </section>
     <section class="contacts">
@@ -112,47 +136,65 @@
           <dt class="contacts__definition">адрес:</dt>
           <dd class="contacts__value">г. Санкт-Петербург,<br>ул. Большая Конюшенная,<br>д 19/8, офис 101</dd>
         </dl>
-        <div class="contacts__map"></div>
-        <a href="javascript:void(0);" class="contacts__button button">Напишите нам</a>
+        <div class="contacts__map" id="yandex_map"></div>
+        <a href="contacts.html" class="contacts__button button">Напишите нам</a>
       </div>
     </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrapper">
+      <a href="index.html" class="page-footer__logo">
+        <svg class="page-footer__logo-icon" width="102" height="34">
+          <use xlink:href="#icon-logo-footer"></use>
+        </svg>
+      </a>
       <div class="social">
         <a href="javascript:void(0);" class="social__link  social__link--instagram">
           <span class="visually-hidden">Инстаграм</span>
+          <svg class="social__icon" width="22" height="22">
+            <use xlink:href="#icon-insta"></use>
+          </svg>
         </a>
         <a href="javascript:void(0);" class="social__link  social__link--facebook">
           <span class="visually-hidden">Фейсбук</span>
+          <svg class="social__icon" width="15" height="28">
+            <use xlink:href="#icon-fb"></use>
+          </svg>
         </a>
         <a href="javascript:void(0);" class="social__link  social__link--twitter">
           <span class="visually-hidden">Твитер</span>
+          <svg class="social__icon" width="24" height="20">
+            <use xlink:href="#icon-twitter"></use>
+          </svg>
         </a>
       </div>
-      <div class="page-footer__copyright">Разработано
+      <div class="page-footer__copyright">
         <a class="page-footer__copyright-author-link" href="https://htmlacademy.ru/intensive/adaptive">
+          Разработано
+          <svg class="page-footer__icon" width="27" height="34">
+            <use xlink:href="#icon-logo-htmlacademy"></use>
+          </svg>
           <span class="visually-hidden">Логотип HTMLacademy</span>
         </a>
       </div>
     </div>
   </footer>
-
-  <div class="modal">
-    <h2 class="modal__title">Добавить в корзину</h2>
-    <form class="form" action="https://echo.htmlacademy.ru/" method="post">
-      <p class="form__modal-text">Выберите размер:</p>
-      <div class="form__modal-controls">
-        <input class="form__input  form__input--modal-checkbox" type="checkbox" id="s-size" name="s-size">
-        <label class="form__label  form__label--modal-checkbox" for="s-size">S</label>
-        <input class="form__input  form__input--modal-checkbox" type="checkbox" id="m-size" name="m-size">
-        <label class="form__label  form__label--modal-checkbox" for="m-size">M</label>
-        <input class="form__input  form__input--modal-checkbox" type="checkbox" id="l-size" name="l-size">
-        <label class="form__label  form__label--modal-checkbox" for="l-size">L</label>
-      </div>
-      <button class="button  form__modal-button" type="submit">Добавить</button>
-    </form>
+  <div class="overlay">
+    <article class="modal">
+      <h2 class="modal__title">Добавить в корзину</h2>
+      <p class="modal__text">Выберите размер:</p>
+      <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
+        <input class="visually-hidden modal__radio" type="radio" id="s-size" name="check-size" value="s-size" checked>
+        <label class="modal__label" for="s-size">S</label>
+        <input class="visually-hidden modal__radio" type="radio" id="m-size" name="check-size" value="m-size">
+        <label class="modal__label" for="m-size">M</label>
+        <input class="visually-hidden modal__radio" type="radio" id="l-size" name="check-size" value="l-size">
+        <label class="modal__label" for="l-size">L</label>
+        <button class="button modal__button" type="submit">Добавить</button>
+      </form>
+    </article>
   </div>
   <script src="js/script.js"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae912e78fd5ce942b333e89dc74913b2c1bb1aae011ac891582fe70713f948f14&amp;width=100%25&amp;height=457&amp;lang=ru_RU&amp;id=yandex_map&amp;scroll=true"></script>
 </body>
 </html>

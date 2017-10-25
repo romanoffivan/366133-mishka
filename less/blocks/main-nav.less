@@ -34,10 +34,28 @@
   &:active {
     color: rgba(0, 0, 0, 0.3);
   }
+
+  &:hover .main-nav__icon,
+  &:focus .main-nav__icon {
+    fill: @aqua-light;
+  }
+
+  &:active .main-nav__icon {
+    fill: fade(@aqua-light, 30%);
+  }
 }
 
 .main-nav__user-block {
   position: relative;
+  width: 100%;
+}
+
+.main-nav__icon {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  fill: fade(@color-text, 20%);
+  transform: translateY(-50%);
 }
 
 .main-nav__desc {
@@ -122,7 +140,6 @@
     justify-content: space-between;
     .container-tablet();
     height: 88px;
-    border-bottom: 1px solid @color-border;
   }
 
   .main-nav__toggle {
