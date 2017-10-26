@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.page-header__promo {
+.page-header__promo--main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,14 +16,17 @@
     background-image: url("../img/hero-mobile@2x.jpg");
     background-size: 575px auto;
   }
+}
 
-  &--inner {
-    width: 100%;
-    min-height: 178px;
-    background-image: none;
-    background-color: #f9f9f9;
-    margin-bottom: 0;
-  }
+.page-header__promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 178px;
+  background-color: #f9f9f9;
+  margin-bottom: 0;
 }
 
 .page-header__title {
@@ -104,7 +107,7 @@
     margin-bottom: 30px;
   }
 
-  .page-header__promo {
+  .page-header__promo--main-page {
     background-image: url("../img/hero-tablet@1x.jpg");
     background-position: center top;
     border-top: 1px solid @color-border;
@@ -123,10 +126,16 @@
       background-image: url("../img/hero-tablet@2x.jpg");
       background-size: 1150px auto;
     }
+  }
 
-    &--inner {
-      background-image: none;
-    }
+  .page-header__promo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 22px;
+    background: url("../img/bg-zigzag-fill.svg") repeat-x center top;
+    background-size: contain;
   }
 
   .page-header__title {
@@ -163,7 +172,7 @@
 }
 
 @media (min-width: @desktop-width) {
-  .page-header__promo {
+  .page-header__promo--main-page {
     background-image: url("../img/hero-desktop@1x.jpg");
     background-position: center -10px;
     background-size: 1250px 760px;
@@ -176,10 +185,10 @@
       background-image: url("../img/hero-desktop@2x.jpg");
       background-size: 1250px 760px;
     }
+  }
 
-    &--inner {
-      background-image: none;
-    }
+  .page-header__promo::after {
+    background-size: auto;
   }
 
   .page-header__title {

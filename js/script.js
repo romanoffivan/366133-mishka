@@ -4,18 +4,22 @@ var buyBtns = document.querySelectorAll(".buy-button");
 var overlay = document.querySelector(".overlay");
 var modal = document.querySelector(".modal");
 
-navMain.classList.remove("main-nav--nojs");
+if(navToggle) {
+  navMain.classList.add("main-nav--close");
+  navToggle.classList.remove("main-nav__toggle--nojs");
 
-navToggle.addEventListener("click", function(event) {
-  event.preventDefault();
-  if(!navToggle.classList.contains("main-nav__toggle--close") &&  navMain.classList.contains("main-nav--close")) {
-    navMain.classList.remove("main-nav--close");
-    navToggle.classList.add("main-nav__toggle--close");
-  } else {
-    navMain.classList.add("main-nav--close");
-    navToggle.classList.remove("main-nav__toggle--close");
-  }
-})
+  navToggle.addEventListener("click", function(event) {
+    event.preventDefault();
+    if(!navToggle.classList.contains("main-nav__toggle--close") &&  navMain.classList.contains("main-nav--close")) {
+      navMain.classList.remove("main-nav--close");
+      navToggle.classList.add("main-nav__toggle--close");
+    }
+    else {
+      navMain.classList.add("main-nav--close");
+      navToggle.classList.remove("main-nav__toggle--close");
+    }
+  });
+}
 
 if(modal) {
   for(var i = 0; i < buyBtns.length; i++) {
