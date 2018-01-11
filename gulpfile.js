@@ -115,4 +115,4 @@ gulp.task("build", function (done) {
     "webp",
     done
   );
-})
+});
